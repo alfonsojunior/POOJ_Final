@@ -12,16 +12,20 @@ public class Partida {
 	public Partida() {
 		
 		setCasa(null);
-		pontosCasa = 0;
+		this.pontosCasa = 0;
 		setVisitante(null);
-		pontosVisitante = 0;
-		fim = true;
+		this.pontosVisitante = 0;
+		this.fim = true;
+		this.vitorioso = 'X';
 		
 	}
 	
 	public void iniciarPartida() {
 		if (this.casa != null && this.visitante != null)
+		{
 			this.fim = false;
+			this.vitorioso = 'X';
+		}
 	}
 	
 	public void adicionarPontosCasa(int pontos) {
@@ -81,6 +85,21 @@ public class Partida {
 	
 	public char getVitorioso() {
 		return this.vitorioso;
+	}
+	
+	public String getID() {
+		return this.casa.getNome().trim() + "X" + this.visitante.getNome().trim();
+	}
+	
+	@Override
+	public String toString() {
+		if (this.casa == null || this.visitante == null) {
+			return "Partida inválida";
+		} else {
+			return this.casa.getNome() + " X " + this.visitante.getNome() + "\r\n" 
+					+ this.pontosCasa + " X " + this.pontosVisitante + "\r\n"
+					+ this.fim != null && this.fim ? "Partida finalizada" : "Partida em andamento";
+		}
 	}
 	
 }
