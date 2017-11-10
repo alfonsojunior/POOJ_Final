@@ -24,7 +24,7 @@ public class Partida {
 		if (this.casa != null && this.visitante != null)
 		{
 			this.fim = false;
-			this.vitorioso = 'X';
+			this.vitorioso = 'I';
 		}
 	}
 	
@@ -57,8 +57,16 @@ public class Partida {
 	}
 
 	public void setCasa(Time casa) {
-		if (!casa.toString().equals(this.visitante.toString())) {
-			this.casa = casa;
+		if (casa != null) {
+			if (this.visitante != null) {
+				if (!casa.toString().equals(this.visitante.toString())) {
+					this.casa = casa;
+				}
+			} else {
+				this.casa = casa;
+			}
+		} else {
+			this.casa = null;
 		}
 	}
 
@@ -67,8 +75,16 @@ public class Partida {
 	}
 
 	public void setVisitante(Time visitante) {
-		if (!visitante.toString().equals(this.casa.toString())) {
-			this.visitante = visitante;
+		if (visitante != null) {
+			if (this.casa != null) {
+				if (!visitante.toString().equals(this.casa.toString())) {
+					this.visitante = visitante;
+				}
+			} else {
+				this.visitante = visitante;
+			}
+		} else {
+			this.visitante = null;
 		}
 	}
 	
@@ -98,7 +114,8 @@ public class Partida {
 		} else {
 			return this.casa.getNome() + " X " + this.visitante.getNome() + "\r\n" 
 					+ this.pontosCasa + " X " + this.pontosVisitante + "\r\n"
-					+ this.fim != null && this.fim ? "Partida finalizada" : "Partida em andamento";
+					+ (this.fim && this.vitorioso != 'X' ? "Partida finalizada" : 
+						this.fim && this.vitorioso == 'X'? "Partida não iniciada" : "Partida em andamento");
 		}
 	}
 	
