@@ -1,7 +1,9 @@
 package br.com.alfonso;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Horario {
 
@@ -29,11 +31,17 @@ public class Horario {
 	}
 	
 	public void removerPartida(Partida partida) {
-		for (Partida part : this.partidas) {
-			if (part.getID().equals(partida.getID()) && part.getVitorioso() != 'C' && part.getVitorioso() != 'V') {
-				this.partidas.remove(part);
+		for (Iterator<Partida> it = this.partidas.iterator(); it.hasNext(); ) {
+			Partida part = it.next();
+			if (part.toString().equals(partida.toString())) {
+				it.remove();
 			}
 		}
+	}
+	
+	public String getID() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HHmmssSSS");
+		return hora.format(dtf);
 	}
 
 }
