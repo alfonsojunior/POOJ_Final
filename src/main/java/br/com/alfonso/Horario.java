@@ -26,6 +26,20 @@ public class Horario {
 		return this.partidas;
 	}
 	
+	public String listaPartidas() {
+		
+		String retorno = "";
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+		retorno = "[" +this.hora.format(dtf) + "]\r\n";
+		for (Partida partida : this.partidas) {
+			retorno += "\t[" +partida.getID() + "]\r\n";
+		}
+		
+		return retorno;
+		
+	}
+	
 	public void adicionarPartida(Partida partida) {
 		this.partidas.add(partida);
 	}
@@ -40,8 +54,13 @@ public class Horario {
 	}
 	
 	public String getID() {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HHmmssSSS");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HHmm");
 		return hora.format(dtf);
+	}
+	
+	@Override
+	public String toString() {
+		return listaPartidas();
 	}
 
 }

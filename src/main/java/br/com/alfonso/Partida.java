@@ -104,7 +104,7 @@ public class Partida {
 	}
 	
 	public String getID() {
-		return this.casa.getNome().trim() + "X" + this.visitante.getNome().trim();
+		return this.casa.getNome().trim() + " X " + this.visitante.getNome().trim();
 	}
 	
 	@Override
@@ -113,7 +113,7 @@ public class Partida {
 			return "Partida inválida";
 		} else {
 			return this.casa.getNome() + " X " + this.visitante.getNome() + "\r\n" 
-					+ this.pontosCasa + " X " + this.pontosVisitante + "\r\n"
+					+ this.getPontosCasa() + " X " + this.getPontosVisitante() + "\r\n"
 					+ (this.fim && this.vitorioso != 'X' ? "Partida finalizada" : 
 						this.fim && this.vitorioso == 'X'? "Partida não iniciada" : "Partida em andamento");
 		}

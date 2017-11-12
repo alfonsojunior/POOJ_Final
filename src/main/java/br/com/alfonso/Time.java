@@ -30,7 +30,9 @@ public class Time {
 	
 	@Override
 	public String toString() {
-		return this.sigla.trim() + " - " + this.nome.trim();
+		return this.sigla.trim() 
+				+ " - " 
+				+ this.nome.trim();
 	}
 	
 }
