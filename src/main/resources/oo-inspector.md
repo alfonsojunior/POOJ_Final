@@ -101,6 +101,7 @@
 * Ou utilize o método reagendarPartida passando a data atual (LocalDate) da partida, a Partida, a nova data (LocalDate) e o novo horário (LocalTime), para que o método encontre mais rápido a Partida
 
 ###### Adicionar pontos a uma equipe em um jogo em andamento
-* Com a Partida em andamento, utilie os métodos adicionarPontosCasa e adicionarPontosVisitante. Somente partidas em andamento aceitam adicionar pontos aos Timesz
+* Com a Partida em andamento, utilie os métodos adicionarPontosCasa e adicionarPontosVisitante. Somente partidas em andamento aceitam adicionar pontos aos Times 
+
 ###### Definir resultado final de um jogo
 * Utilizando o método finalizarPartida, o jogo verificará a pontuação e definirá o vencedor. Como um jogo de basquete não tem empate, o jogo não é finalizado se a pontuação do jogo estiver empatada
