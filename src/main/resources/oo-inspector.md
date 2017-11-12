@@ -1,19 +1,19 @@
-# Encapsulamento
+# Encapsulamento / Polimorfismo / Herança
 
 ## Ferramenta
 
-> Encapsulamento - deixar somente os métodos importantes expostos
-> Encapsulamento - atributos de instancia privados
-> Encapsulamento - pode dizer o que o método faz sem dizer como ele faz
-> Encapsulamento - mudanças devem ocorrer somente em um só lugar
-> Herança - Somente colocar na classe o que diz respeito a ela
-> Herança - Não possuir repetição de código
-> Herança- A classe filha deve usar todas as propriedades da classe pai
-> Herança - Atributos protegidos para que a classe filha possa manipular atributos da classe pai.
-> Polimorfismo - A classe de base possui o forma como o processo funciona
-> Polimorfismo - A classe filha implementa as regras do funcionamento definido nos processos da classe base
-> Polimorfismo - Os métodos da classe pai devem ser construídos na classe filha
-> Encapsulamento - cobertura de código superior a 80%
+* Encapsulamento - deixar somente os métodos importantes expostos
+* Encapsulamento - atributos de instancia privados
+* Encapsulamento - pode dizer o que o método faz sem dizer como ele faz
+* Encapsulamento - mudanças devem ocorrer somente em um só lugar
+* Herança - Somente colocar na classe o que diz respeito a ela
+* Herança - Não possuir repetição de código
+* Herança- A classe filha deve usar todas as propriedades da classe pai
+* Herança - Atributos protegidos para que a classe filha possa manipular atributos da classe pai.
+* Polimorfismo - A classe de base possui o forma como o processo funciona
+* Polimorfismo - A classe filha implementa as regras do funcionamento definido nos processos da classe base
+* Polimorfismo - Os métodos da classe pai devem ser construídos na classe filha
+* Encapsulamento - cobertura de código superior a 80%
 
 ## Inspeção
 
@@ -84,3 +84,23 @@
 * PartidaTest: 3
 * TemporadaTest: 3
 * TimeTest: 3
+
+## Regras do Jogo NBA
+
+###### Agendar um jogo para um dia e horário
+* Criar uma Partida com o Tima da casa e o Time Visitante
+* Criar um Horario com uma hora (LocalTime) e adiciona-se a partida a esse Horario
+* Criar uma Agenda para uma data (LocalDate) e adiciona-se o Horário a essa Agenda
+* Se a Temporada não existir ainda, criar uma Temporada, depois, adicione a Agenda a Temporada
+
+###### Jogos de uma data
+* Na Temporada, utilize o método listarPartidas passando como parâmetro a data desejada no formato LocalDate
+
+###### Reagendar um jogo
+* Na Temporada, utilize o método reagendarPartida passando a Partida, a nova data (LocalDate) e o novo horário (LocalTime), que o método encontrará a partida e fará o reagendamento da Partida
+* Ou utilize o método reagendarPartida passando a data atual (LocalDate) da partida, a Partida, a nova data (LocalDate) e o novo horário (LocalTime), para que o método encontre mais rápido a Partida
+
+###### Adicionar pontos a uma equipe em um jogo em andamento
+* Com a Partida em andamento, utilie os métodos adicionarPontosCasa e adicionarPontosVisitante. Somente partidas em andamento aceitam adicionar pontos aos Timesz
+###### Definir resultado final de um jogo
+* Utilizando o método finalizarPartida, o jogo verificará a pontuação e definirá o vencedor. Como um jogo de basquete não tem empate, o jogo não é finalizado se a pontuação do jogo estiver empatada
