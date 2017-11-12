@@ -32,11 +32,11 @@
 * Time: 2
 
 ##### Caso 3 - Encapsulamento - pode dizer o que o método faz sem dizer como ele faz  (1 - não se aplica, 2 - razoavelmente, 3 - completamente)
-* Agenda: 2
-* Horario: 2
-* Partida: 2
-* Temporada: 2
-* Time: 2
+* Agenda: 3
+* Horario: 3
+* Partida: 3
+* Temporada: 3
+* Time: 3
 
 ##### Caso 4 - Encapsulamento - mudanças devem ocorrer somente em um só lugar. (1 - não ocorre, 2 - ocorre)
 * Agenda: 2
@@ -60,22 +60,27 @@
 * Time: 3
 
 ##### Caso 7 - Herança - A classe filha deve usar todas as propriedades da classe pai (1 - não usa, 2 - usa)
-> Basquete: 2 (nao possui pai)
-> Jogo: 2 (nao possui pai)
-> TimeBasquete: 2
-> ControleJogos:  (nao possui pai)
+* Agenda: 2 (não extende classe ou implementa interface)
+* Horario: 2 (não extende classe ou implementa interface)
+* Partida: 2 (sobrescreve todos os métodos)
+* Temporada: 2 (não extende classe ou implementa interface)
+* Time: 2 (não extende classe ou implementa interface)
 
 ##### Caso 8 - Herança - Atributos protegidos para que a classe filha possa manipular atributos da classe pai.
-> Não houve necessidade de manipulação de propriedades alem das informadas nas classes pai.
+> Os atributos não foram definidos na classe pai, apenas métodos.
 
-##### Caso 9 - Polimorfismo - A classe de base possui o forma como o processo funciona. (1 - Não, 2 - Sim)
-> InterfacePontuacao - 2
+##### Caso 9 - Polimorfismo - A classe de base possui a forma como o processo funciona. (1 - Não, 2 - Sim)
+* IPartida: 2
 
 ##### Caso 10 - Polimorfismo - A classe filha implementa as regras do funcionamento definido nos processos da classe base.  (1 - Não, 2 - Sim)
-> InterfacePontuacao (Cesta01, Cesta02, Cesta03) - 2 
+* Partida: 2 
 
 ##### Caso 11 - Polimorfismo - Os métodos da classe pai devem ser construídos na classe filha (1 - Não, 2 - Sim)
-> InterfacePontuacao (Cesta01, Cesta02, Cesta03) - 2 
+* Partida: 2 
 
 ##### Caso 12 - Encapsulamento - cobertura de código superior a 80% (1 - abaixo, 2 - 80%, 3 - 100%)
-> ControleJogosTest - 3
+* AgendaTest: 3
+* HorarioTest: 3
+* PartidaTest: 3
+* TemporadaTest: 3
+* TimeTest: 3

@@ -1,6 +1,8 @@
 package br.com.alfonso.nba;
 
-public class Partida {
+import br.com.alfonso.IPartida;
+
+public class Partida extends IPartida<Time>  {
 	
 	private Time casa = null;
 	private int pontosCasa = 0;
@@ -20,6 +22,7 @@ public class Partida {
 		
 	}
 	
+	@Override
 	public void iniciarPartida() {
 		if (this.casa != null && this.visitante != null)
 		{
@@ -28,6 +31,7 @@ public class Partida {
 		}
 	}
 	
+	@Override
 	public void adicionarPontosCasa(int pontos) {
 		if (!this.fim) {
 			if (pontos > 0 && pontos <= 3) {
@@ -40,6 +44,7 @@ public class Partida {
 		return this.pontosCasa;
 	}
 	
+	@Override
 	public void adicionarPontosVisitante(int pontos) {
 		if (!this.fim) {
 			if (pontos > 0 && pontos <= 3) {
@@ -56,6 +61,7 @@ public class Partida {
 		return casa;
 	}
 
+	@Override
 	public void setCasa(Time casa) {
 		if (casa != null) {
 			if (this.visitante != null) {
@@ -74,6 +80,7 @@ public class Partida {
 		return visitante;
 	}
 
+	@Override
 	public void setVisitante(Time visitante) {
 		if (visitante != null) {
 			if (this.casa != null) {
@@ -88,6 +95,7 @@ public class Partida {
 		}
 	}
 	
+	@Override
 	public void finalizarPartida() {
 		if (this.pontosCasa != this.pontosVisitante) {
 			this.fim = true;
