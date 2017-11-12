@@ -106,6 +106,7 @@ public class Temporada {
 	}
 	
 	public void reagendarPartida(Partida partida, LocalDate novaData, LocalTime novaHora) {
+		boolean achou = false;
 		for (Iterator<Agenda> it = this.agendas.iterator(); it.hasNext(); ) {
 			Agenda agenda = it.next();
 			for (Iterator<Horario> it1 = agenda.getHorarios().iterator(); it.hasNext(); ) {
@@ -114,18 +115,33 @@ public class Temporada {
 					Partida partida1 = it2.next();
 					if (partida.getID().equals(partida1.getID())) {
 						it2.remove();
+						achou = true;
+						break;
 					}
 				}
+				if (achou) {
+					if (horario.getPartidas().size() == 0)
+						it1.remove();
+					break;
+				}
+			}
+			if (achou) {
+				if (agenda.getHorarios().size() == 0)
+					it.remove();
+				break;
 			}
 		}
 		Agenda agenda1 = new Agenda();
+		agenda1.setData(novaData);
 		Horario horario1 = new Horario();
+		horario1.setHora(novaHora);
 		horario1.adicionarPartida(partida);
 		agenda1.adicionarHorario(horario1);
 		this.adicionarAgenda(agenda1);
 	}
 	
 	public void reagendarPartida(LocalDate dataAtual, Partida partida, LocalDate novaData, LocalTime novaHora) {
+		boolean achou = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYYMMdd");
 		for (Iterator<Agenda> it = this.agendas.iterator(); it.hasNext(); ) {
 			Agenda agenda = it.next();
@@ -136,13 +152,27 @@ public class Temporada {
 						Partida partida1 = it2.next();
 						if (partida.getID().equals(partida1.getID())) {
 							it2.remove();
+							achou = true;
+							break;
 						}
+					}
+					if (achou) {
+						if (horario.getPartidas().size() == 0)
+							it1.remove();
+						break;
 					}
 				}
 			}
+			if (achou) {
+				if (agenda.getHorarios().size() == 0)
+					it.remove();
+				break;
+			}
 		}
 		Agenda agenda1 = new Agenda();
+		agenda1.setData(novaData);
 		Horario horario1 = new Horario();
+		horario1.setHora(novaHora);
 		horario1.adicionarPartida(partida);
 		agenda1.adicionarHorario(horario1);
 		this.adicionarAgenda(agenda1);

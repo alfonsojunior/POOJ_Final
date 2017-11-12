@@ -66,7 +66,9 @@ public class Agenda {
 		String retorno = "";
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-dd");
 		retorno = "[" +this.data.format(dtf) + "]\r\n";
-		for (Horario horario : this.horarios) {
+		//for (Horario horario : this.horarios) {
+		for (Iterator<Horario> it = this.horarios.iterator(); it.hasNext(); ) {
+			Horario horario = it.next();
 			retorno += horario.toString();
 		}
 		

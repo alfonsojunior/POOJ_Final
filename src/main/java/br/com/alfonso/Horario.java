@@ -32,7 +32,9 @@ public class Horario {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
 		retorno = "[" +this.hora.format(dtf) + "]\r\n";
-		for (Partida partida : this.partidas) {
+		//for (Partida partida : this.partidas) {
+		for (Iterator<Partida> it = this.partidas.iterator(); it.hasNext(); ) {
+			Partida partida = it.next();
 			retorno += "\t[" +partida.getID() + "]\r\n";
 		}
 		
