@@ -116,8 +116,6 @@ public class AgendaTest {
 		horario.adicionarPartida(partida);
 		agenda.removerHorario(horario);
 		test = "[2017-12-15]\r\n";
-		System.out.println(test);
-		System.out.println(agenda.toString());
 		Assert.assertEquals(test, agenda.toString());
 	}
 

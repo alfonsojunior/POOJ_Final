@@ -13,7 +13,9 @@ public class Temporada {
 	private ArrayList<Agenda> agendas = new ArrayList<Agenda>();	
 	
 	public Temporada() {
-		
+		this.id = "";
+		this.times = new ArrayList<Time>();
+		this.agendas = new ArrayList<Agenda>();
 	}
 	
 	public void setID(String id) {
@@ -162,6 +164,7 @@ public class Temporada {
 	public String toString() {
 		String retorno = "";
 		
+		retorno = "[" + this.id.trim() + "]\r\n";
 		for (Agenda agenda : this.agendas) {
 			retorno += agenda.toString() + "\r\n";
 		}
