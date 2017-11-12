@@ -1,4 +1,4 @@
-package br.com.alfonso;
+package br.com.alfonso.nba;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

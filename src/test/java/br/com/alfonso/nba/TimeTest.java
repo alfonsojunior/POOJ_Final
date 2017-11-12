@@ -1,9 +1,9 @@
-package br.com.alfonso;
+package br.com.alfonso.nba;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.alfonso.Time;
+import br.com.alfonso.nba.Time;
 
 public class TimeTest {
 

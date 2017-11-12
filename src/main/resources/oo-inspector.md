@@ -25,34 +25,39 @@
 * Time: 2
 
 ##### Caso 2 - Encapsulamento - atributos de instancia privados (1 - não usa, 2 - usa)
-> Basquete: 2
-> Jogo: 2
-> TimeBasquete: 2
-> ControleJogos: 2
+* Agenda: 2
+* Horario: 2
+* Partida: 2
+* Temporada: 2
+* Time: 2
 
 ##### Caso 3 - Encapsulamento - pode dizer o que o método faz sem dizer como ele faz  (1 - não se aplica, 2 - razoavelmente, 3 - completamente)
-> Basquete: 3
-> Jogo: 3
-> TimeBasquete: 3
-> ControleJogos: 3
+* Agenda: 2
+* Horario: 2
+* Partida: 2
+* Temporada: 2
+* Time: 2
 
 ##### Caso 4 - Encapsulamento - mudanças devem ocorrer somente em um só lugar. (1 - não ocorre, 2 - ocorre)
-> Basquete: 2
-> Jogo: 2
-> TimeBasquete: 2
-> ControleJogos: 2
+* Agenda: 2
+* Horario: 2
+* Partida: 2
+* Temporada: 2
+* Time: 2
 
 ##### Caso 5 - Herança - Somente colocar na classe o que diz respeito a ela (1 - não ocorre, 2 - ocorre)
-> Basquete: 2
-> Jogo: 2
-> TimeBasquete: 2
-> ControleJogos: 2
+* Agenda: 2
+* Horario: 2
+* Partida: 2
+* Temporada: 2
+* Time: 2
 
 ##### Caso 6 - Herança - Não possuir repetição de código (1 - possui repetição,  2 - possui pouca, 3 - não possui repetição)
-> Basquete: 3
-> Jogo: 2
-> TimeBasquete: 3
-> ControleJogos: 3
+* Agenda: 3
+* Horario: 3
+* Partida: 3
+* Temporada: 2
+* Time: 3
 
 ##### Caso 7 - Herança - A classe filha deve usar todas as propriedades da classe pai (1 - não usa, 2 - usa)
 > Basquete: 2 (nao possui pai)

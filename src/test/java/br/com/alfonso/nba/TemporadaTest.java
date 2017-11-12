@@ -1,4 +1,4 @@
-package br.com.alfonso;
+package br.com.alfonso.nba;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -6,6 +6,12 @@ import java.time.Month;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.com.alfonso.nba.Agenda;
+import br.com.alfonso.nba.Horario;
+import br.com.alfonso.nba.Partida;
+import br.com.alfonso.nba.Temporada;
+import br.com.alfonso.nba.Time;
 
 public class TemporadaTest {
 
